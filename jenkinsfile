@@ -1,5 +1,7 @@
 node{
-    
+echo "The node name is:' ${env.NODE_NAME}
+echo "The job name is:" ${env.JOB_NAME}
+
 def mavenHome = tool name: "Maven1"
 //git checkout stage
 stage('scm connect(checkout)'){
