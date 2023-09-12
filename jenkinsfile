@@ -1,0 +1,30 @@
+node{
+    
+def mavenHome = tool name: "Maven1"
+//git checkout stage
+stage('scm connect(checkout)'){
+git branch: 'development', credentialsId: '8c319b7f-a525-4c0b-832c-570d94efb017', url: 'https://github.com/sundar-vel/maven-web-application.git'
+}//stage closing 
+
+//maven build
+stage('build stage'){
+ sh"$mavenHome/bin/mvn clean package"
+}//build stage closing
+
+//sonar static code analysis report
+stage('sonar report'){
+    sh"$mavenHome/bin/mvn sonar:sonar"
+}//sonar report close
+
+//nexus artifact repo store
+stage('store artifacte in nexu repo'){
+    sh"$mavenHome/bin/mvn deploy"
+}//close
+//deply on Tomcat server
+stage('deploy on tomcat'){
+    sshagent(['dd96bc83-7754-4bec-ab44-09b53810f9c7']) {
+    sh" scp -o StrictHostKeyChecking=no  target/maven-web-application.war ec2-user@13.233.148.129:/opt/apache-tomcat-9.0.80/webapps "
+}
+}
+
+}//node closing
