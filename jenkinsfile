@@ -2,6 +2,7 @@ node{
 def mavenHome = tool name: "Maven1"
 echo "The node name is:' ${env.NODE_NAME}
 echo "The job name is:" ${env.JOB_NAME}
+echo "The job number is:" ${env.BUILD_NUMBER}
 //git checkout stage
 stage('scm connect(checkout)'){
 git branch: 'development', credentialsId: '8c319b7f-a525-4c0b-832c-570d94efb017', url: 'https://github.com/sundar-vel/maven-web-application.git'
