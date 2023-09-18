@@ -25,8 +25,8 @@ stage('store artifacte in nexu repo'){
 }//close
 //deply on Tomcat server
 stage('deploy on tomcat'){
-    sshagent(['dd96bc83-7754-4bec-ab44-09b53810f9c7']) {
-    sh" scp -o StrictHostKeyChecking=no  target/maven-web-application.war ec2-user@43.204.236.34:/opt/apache-tomcat-9.0.80/webapps "
+sshagent(['50e996a9-38e5-4516-832a-84f06ff47ba2']) {
+   sh" scp -o StrictHostKeyChecking=no  target/maven-web-application.war ec2-user@43.204.236.34:/opt/apache-tomcat-9.0.80/webapps "
 }
 }
 
