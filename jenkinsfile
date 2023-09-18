@@ -1,5 +1,5 @@
 node{
-def mavenHome = tool name: "Maven1"
+def mavenHome = tool name: "maven1"
 echo "The node name is: ${env.NODE_NAME} "
 echo "The job name is: ${env.JOB_NAME} "
 echo "The job number is: ${env.BUILD_NUMBER} "
@@ -26,7 +26,7 @@ stage('store artifacte in nexu repo'){
 //deply on Tomcat server
 stage('deploy on tomcat'){
     sshagent(['dd96bc83-7754-4bec-ab44-09b53810f9c7']) {
-    sh" scp -o StrictHostKeyChecking=no  target/maven-web-application.war ec2-user@13.233.148.129:/opt/apache-tomcat-9.0.80/webapps "
+    sh" scp -o StrictHostKeyChecking=no  target/maven-web-application.war ec2-user@43.204.236.34:/opt/apache-tomcat-9.0.80/webapps "
 }
 }
 
