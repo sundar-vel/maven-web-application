@@ -1,5 +1,5 @@
 node{
-buildName 'Dev - Build - $(BUILD_NUMBER)'
+buildName 'DEV - ${BUILD_NUMBER}'
 buildDescription 'PIPline-script-scriptedway '
 def mavenHome = tool name: "maven1"
 echo "The node name is: ${env.NODE_NAME} "
