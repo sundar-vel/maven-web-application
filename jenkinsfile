@@ -1,0 +1,49 @@
+Started by user Keerthivasan
+[Wed Sep 20 11:12:46 UTC 2023] Starting branch indexing...
+ > git --version # timeout=10
+ > git --version # 'git version 2.39.3'
+using GIT_ASKPASS to set credentials Github
+ > git ls-remote --symref -- https://github.com/sundar-vel/maven-web-application.git # timeout=10
+ > git rev-parse --resolve-git-dir /var/lib/jenkins/caches/git-e94321756db12d6c8ecf1a904978ba80/.git # timeout=10
+Setting origin to https://github.com/sundar-vel/maven-web-application.git
+ > git config remote.origin.url https://github.com/sundar-vel/maven-web-application.git # timeout=10
+Fetching & pruning origin...
+Listing remote references...
+ > git config --get remote.origin.url # timeout=10
+ > git --version # timeout=10
+ > git --version # 'git version 2.39.3'
+using GIT_ASKPASS to set credentials Github
+ > git ls-remote -h -- https://github.com/sundar-vel/maven-web-application.git # timeout=10
+Fetching upstream changes from origin
+ > git config --get remote.origin.url # timeout=10
+using GIT_ASKPASS to set credentials Github
+ > git fetch --tags --force --progress --prune -- origin +refs/heads/*:refs/remotes/origin/* # timeout=10
+Checking branches...
+  Checking branch dependabot/maven/spring.version-5.2.3.RELEASE
+      ‘jenkinsfile’ not found
+    Does not meet criteria
+  Checking branch master
+      ‘jenkinsfile’ not found
+    Does not meet criteria
+  Checking branch dependabot/maven/org.springframework-spring-core-5.3.18
+      ‘jenkinsfile’ not found
+    Does not meet criteria
+  Checking branch test
+      ‘jenkinsfile’ not found
+    Does not meet criteria
+  Checking branch uat
+      ‘jenkinsfile’ not found
+    Does not meet criteria
+  Checking branch dependabot/maven/junit-junit-4.13.1
+      ‘jenkinsfile’ not found
+    Does not meet criteria
+  Checking branch dependabot/maven/org.springframework-spring-webmvc-5.3.18
+      ‘jenkinsfile’ not found
+    Does not meet criteria
+  Checking branch development
+      ‘jenkinsfile’ found
+    Met criteria
+Scheduled build for branch: development
+Processed 8 branches
+[Wed Sep 20 11:12:51 UTC 2023] Finished branch indexing. Indexing took 5.3 sec
+Finished: SUCCESS
